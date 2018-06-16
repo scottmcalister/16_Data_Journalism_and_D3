@@ -16,7 +16,7 @@ var svg = d3.select('.chart')
 	.attr("width", svgWidth)
 	.attr("height", svgHeight)
 	.append("g")
-	.attr("transform", "translate"(" + margin.left +", " + margin.top + "));
+	.attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 var chart = svg.append("g");
 
@@ -53,7 +53,7 @@ d3.csv("data.csv", function(error, healthData){
 		.html(function(data){
 			var state = data.state;
 			var povertyRate = +data.poverty;
-			var healthStatus + +data.healthStatus;
+			var healthStatus = +data.healthStatus;
 			return(state + "<br> Poverty Rate: " + povertyRate + "<br> Percentage of the population in fair or poor health: " + healthStatus)
 		});
 
